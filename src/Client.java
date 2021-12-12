@@ -21,10 +21,15 @@ public class Client {
         PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
         // todo: implement the scenario
-
+        BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
+        String input = consoleReader.readLine();
+        outClient.println(input);
+        String output=inClient.readLine();
+        System.out.println(output);
         //close in / out
         inClient.close();
         outClient.close();
+
 
         // close client socket
         socket.close();
